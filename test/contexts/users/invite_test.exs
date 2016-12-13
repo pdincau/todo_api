@@ -12,4 +12,8 @@ defmodule TodoApi.Users.InviteTest do
 
     assert (from u in User, select: count(u.id)) |> Repo.one == 1
   end
+
+  test "it handles invalid email" do
+    {:error, :invalid_email} = Invite.call(%{email: "Alice and Bob"})
+  end
 end

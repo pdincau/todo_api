@@ -36,5 +36,16 @@ defmodule TodoApi.UserController.InviteTest do
       assert response["data"]["id"] > 0
       assert response["data"]["email"] == "alice@example.com"
   end
+
+
+  test "invalid email gives a 400 response" do
+    conn =
+      build_conn
+      |> post(user_path(build_conn, :create, email: "alice"))
+
+    response = json_response(conn, 400)
+
+    assert response["message"] == "email is invalid"
+  end
 end
 
