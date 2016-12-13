@@ -10,7 +10,7 @@ defmodule TodoApi.UserController do
     {:ok, body} = %{"data" => %{id: user.id, email: user.email}} |> Poison.encode
 
     conn
-    |> put_resp_header("content-type", "application/json")
-    |> resp(201, body)
+      |> put_status(:created)
+      |> render("show.json", user: user)
   end
 end
