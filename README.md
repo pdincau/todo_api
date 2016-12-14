@@ -16,7 +16,7 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
     curl -H "Content-Type: application/json" -X POST -d '{"todo": {"description":"Title 001"}}' http://localhost:4000/api/todos/
 
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
+Ready to run in production? Please check out the [Phoenix Framework deployment guide](http://www.phoenixframework.org/docs/deployment).
 
 ## Learn more
 
